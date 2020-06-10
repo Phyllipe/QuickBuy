@@ -16,9 +16,9 @@ namespace QuickBuy.Dominio.Entidades
         public override void Validacao()
         {
             if (string.IsNullOrEmpty(Email))
-                AdiconarCritica("Email não foi informado");
+                AdicionarCritica("Email não foi informado");
             if (string.IsNullOrEmpty(Senha))
-                AdiconarCritica("Senha não foi informado");
+                AdicionarCritica("Senha não foi informado");
         }
     }
 }
