@@ -29,7 +29,9 @@ namespace QuickBuy.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var connectionString = Configuration.GetConnectionString("ServidorPhyllipe");
-            services.AddDbContext<QuickBuyContexto>(option => option.UseLazyLoadingProxies() .UseMySql(connectionString, m => m.MigrationsAssembly("QuickBuy.Repositorio"))) ;
+            services.AddDbContext<QuickBuyContexto>(option => option.UseLazyLoadingProxies() 
+                                                                           .UseMySql(connectionString,
+                                                                                    m => m.MigrationsAssembly("QuickBuy.Repositorio"))) ;
 
             services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
 
