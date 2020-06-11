@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuickBuy.Web.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/[controller]")]
     public class ProdutoController : Controller
     {
         private readonly IProdutoRepositorio _produtoRepositorio;
@@ -16,6 +16,8 @@ namespace QuickBuy.Web.Controllers
         {
             _produtoRepositorio = produtoRepositorio;
         }
+
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -29,7 +31,7 @@ namespace QuickBuy.Web.Controllers
             }
 
         }
-        [HttpGet]
+        [HttpPost]
         public IActionResult Post([FromBody]Produto produto)
         {
             try
